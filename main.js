@@ -1,7 +1,7 @@
 var mySidenav = document.getElementById("mySidenav")
 function openNav() {
     mySidenav.style.opacity = "1";
-    mySidenav.style.zIndex = "1";
+    mySidenav.style.zIndex = "5";
 }
 
 function closeNav() {
@@ -44,6 +44,7 @@ function resetDropdownText() {
 
 // Get the modal
 var modal = document.getElementById("myModal");
+var modalContent = document.getElementById("modal-content");
 
 // Get the <span> element that closes the modal
 var close = document.getElementsByClassName("close")[0];
@@ -53,11 +54,13 @@ function openModal(element) {
     document.getElementById('modal-text').innerHTML = element.text;
     updateDropdownText(element.text);
     modal.style.display = "block";
+    modalContent.style.display = "flex";
     closeDropdown();
 }
 
 function closeModal() {
     modal.style.display = "none";
+    modalContent.style.display = "none";
     resetDropdownText();
     openDropdown();
 }

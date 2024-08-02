@@ -10,7 +10,7 @@ nav{
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 4;
 }
 
 nav .items-container{
@@ -166,6 +166,7 @@ nav:hover .burger-menu img{
 
 .dropdown-box{
     background-color: #e2e2e2;
+    position: relative;
 }
 
 .dropdown-holder{
@@ -261,38 +262,50 @@ nav:hover .burger-menu img{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
+    display: none;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 9% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 70%;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#modal-text{
+    font-size: 40px;
+    color: black;
 }
 
 /* The Close Button */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
     text-decoration: none;
     cursor: pointer;
 } 
@@ -332,4 +345,68 @@ nav:hover .burger-menu img{
     border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
+}
+
+.cascading-images{
+    position: relative;
+    overflow-x: hidden;
+}
+
+.cascading-images .content-wrapper{
+    width: 80%;
+    height: 600px;
+    margin: 5% auto 10%;
+    background-color: #e2e2e2;
+}
+
+.cascading-images .images-wrapper{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cascading-images .images-wrapper div{
+    width: 350px;
+    height: 250px;
+    position: relative;
+}
+
+.cascading-images .images-wrapper .dark{
+    background-color: #969696;
+}
+
+.cascading-images .images-wrapper .light{
+    background-color: white;
+}
+
+.cascading-images .images-wrapper div:nth-child(1){
+    top: 20px;
+    left: 160px;
+}
+
+.cascading-images .images-wrapper div:nth-child(2){
+    top: 150px;
+    left: 100px;
+}
+
+.cascading-images .images-wrapper div:nth-child(3){
+    top: 280px;
+    left: 30px;
+}
+
+.cascading-images .images-wrapper div:nth-child(4){
+    top: 410px;
+    left: -30px;
+}
+
+.cascading-images .images-wrapper div:nth-child(5){
+    top: 540px;
+    left: -90px;
+}
+
+.cascading-images .images-wrapper div:nth-child(6){
+    top: 670px;
+    left: -150px;
 }
