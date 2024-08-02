@@ -9,22 +9,38 @@ function closeNav() {
     mySidenav.style.zIndex = "0";
 }
 
-function myDropdownFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function openDropdown() {
+    if (modal.style.display == 'block') {
+        closeModal();
+    } else {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 }
 
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
+        closeDropdown();
     }
 } 
+
+function closeDropdown() {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+    }
+}
+
+function updateDropdownText(newText) {
+    document.getElementsByClassName("dropbtn")[0].innerHTML = newText;
+}
+
+function resetDropdownText() {
+    document.getElementsByClassName("dropbtn")[0].innerHTML = "Select";
+}
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -32,21 +48,23 @@ var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var close = document.getElementsByClassName("close")[0];
 
-var text = document.getElementById('modal-text');
 
 function openModal(element) {
+    document.getElementById('modal-text').innerHTML = element.text;
+    updateDropdownText(element.text);
     modal.style.display = "block";
-    text.innerHTML = element.text;
+    closeDropdown();
 }
 
-// When the user clicks on <span> (x), close the modal
-close.onclick = function() {
+function closeModal() {
     modal.style.display = "none";
+    resetDropdownText();
+    openDropdown();
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        closeModal();
     }
 }

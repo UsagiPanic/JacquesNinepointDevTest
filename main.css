@@ -160,6 +160,10 @@ nav:hover .burger-menu img{
     font-size: 20px;
 }
 
+.content-wrapper{
+    padding: 50px;
+}
+
 .dropdown-box{
     background-color: #e2e2e2;
 }
@@ -168,7 +172,6 @@ nav:hover .burger-menu img{
     text-align: center;
 }
 
-/* Dropdown styles */
 .dropbtn {
     background-color: white;
     color: black;
@@ -187,13 +190,12 @@ nav:hover .burger-menu img{
     top: 28px;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
+    z-index: 2;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -201,7 +203,6 @@ nav:hover .burger-menu img{
     z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
     background-color: white;
     color: black;
@@ -212,12 +213,7 @@ nav:hover .burger-menu img{
     font-size: 24px;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;} 
-
-.dropdown-box .content-wrapper{
-    padding: 50px;
-}
 
 .dropdown-box .content-wrapper .row{
     display: flex;
@@ -263,8 +259,8 @@ nav:hover .burger-menu img{
     font-size: 20px;
 }
 
- /* The Modal (background) */
- .modal {
+/* The Modal (background) */
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -275,28 +271,65 @@ nav:hover .burger-menu img{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  } 
+} 
+
+.triple-column .content-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.triple-column .content-wrapper .item{
+    margin: 50px;
+    color: white;
+    background-color: #969696;
+    padding: 50px;
+}
+
+.triple-column .title h1{
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.triple-column .text{
+    min-height: 300px;
+}
+
+.triple-column .text p{
+    font-size: 23px;
+    margin-bottom: 40px;
+}
+
+.triple-column .link a{
+    background-color: white;
+    color: #969696;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px 48px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}

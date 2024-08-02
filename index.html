@@ -64,7 +64,7 @@
         <div class="content-wrapper">
             <div class="dropdown-holder">
                 <div class="dropdown">
-                    <button onclick="myDropdownFunction()" class="dropbtn">Select</button>
+                    <button onclick="openDropdown()" class="dropbtn">Select</button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="javascript:void(0)" onclick="openModal(this)">Item 1</a>
                         <a href="javascript:void(0)" onclick="openModal(this)">Item 2</a>
@@ -97,6 +97,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     
     
@@ -105,10 +107,30 @@
         
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close"><img src="assets/icons8-close.svg" alt="Close"></span>
+            <span class="close" onclick="closeModal()"><img src="assets/icons8-close.svg" alt="Close"></span>
             <p id="modal-text">Some text in the Modal..</p>
         </div>
         
+    </div>
+
+    <div class="triple-column">
+        <div class="content-wrapper">
+            <div class="item">
+                <div class="title"><h1>Title</h1></div>
+                <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,</p></div>
+                <div class="link"><a href="#">LINK</a></div>
+            </div>
+            <div class="item">
+                <div class="title"><h1>Title</h1></div>
+                <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,</p></div>
+                <div class="link"><a href="#">LINK</a></div>
+            </div>
+            <div class="item">
+                <div class="title"><h1>Title</h1></div>
+                <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem,</p></div>
+                <div class="link"><a href="#">LINK</a></div>
+            </div>
+        </div>
     </div>
     
     <script src="main.js"></script>
